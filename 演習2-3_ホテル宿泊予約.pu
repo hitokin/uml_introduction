@@ -1,7 +1,7 @@
 @startuml ユースケース図
-' left to right direction
-rectangle ホテル {
+left to right direction
 actor 利用者
+rectangle ホテル {
 usecase 予約
 usecase ログイン
 }

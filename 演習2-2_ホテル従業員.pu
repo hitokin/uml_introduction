@@ -1,8 +1,7 @@
 @startuml ユースケース図
-' left to right direction
-rectangle ホテル {
+left to right direction
 actor 経営者
 actor ホテル従業員
-}
+
 ホテル従業員 <|-- 経営者
 @enduml
