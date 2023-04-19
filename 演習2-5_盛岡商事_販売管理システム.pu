@@ -1,0 +1,11 @@
+@startuml ユースケース図
+left to right direction
+actor 出荷状況確認者
+actor 注文確認者
+package 販売管理システム {
+usecase 注文確認 
+usecase 出荷状況確認
+}
+出荷状況確認者 --> 出荷状況確認 
+注文確認者 --> 注文確認
+@enduml
