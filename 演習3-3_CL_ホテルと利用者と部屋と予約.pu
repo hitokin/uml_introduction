@@ -1,0 +1,27 @@
+@startuml ホテルと利用者と部屋と予約
+class 利用者 { 
+-名前:String
+- 住所:String
+- 電話番号:String
++ 部屋予約:String
++ 会員登録:String
+}
+class ホテル {
+- 部屋:String
+- 会員:String
+}
+class 部屋 {
+- タイプ:String
+- 価格:String
+- キャンペーン価格:String
+}
+class 予約 {
+- チェックイン日:String
+- 滞在期間:String
+- 値段:String
+}
+
+ホテル "1" *-- 部屋
+部屋 "1" -- "1" 予約
+利用者 "1" --> "*" 予約
+@enduml
