@@ -1,0 +1,40 @@
+@startuml ユースケース図
+left to right direction
+actor 利用者
+actor 管理者
+rectangle 病院予約管理システム {
+    usecase 利用者登録
+    usecase 利用者ログイン
+    usecase 管理者ログイン
+    usecase ログアウト
+    利用者ログイン <. 利用者登録 : <<include>>
+    利用者 --> 利用者ログイン
+    管理者 --> 管理者ログイン
+        package 予約登録 {
+            usecase 予約情報登録
+            usecase 情報登録
+            usecase 可能日表示
+            usecase 可能時間表示
+            予約情報登録 <|-- 情報登録
+            予約情報登録 <|-- 可能日表示
+            予約情報登録 <|-- 可能時間表示
+            利用者 --> 予約情報登録
+            管理者 --> 予約情報登録
+        }
+        package 情報保守 {
+            usecase 予約情報保守
+            usecase 情報修正
+            usecase 情報削除
+            予約情報保守 <|-- 情報修正
+            予約情報保守 <|-- 情報削除
+            管理者 --> 予約情報保守 
+        }
+    
+        package 予約表示 {
+            usecase 予約情報表示 
+            利用者 -> 予約情報表示
+            管理者 --> 予約情報表示
+        }
+}
+
+@endumll
