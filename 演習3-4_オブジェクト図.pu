@@ -1,0 +1,25 @@
+@startuml
+object "<u>タイヤ1: タイヤリスト</u>" as t1 {
+状態
+}
+object "<u>タイヤ2: タイヤリスト</u>" as t2 {
+状態
+}
+object "<u>タイヤ3: タイヤリスト</u>" as t3 {
+状態
+}
+object "<u>タイヤ4: タイヤリスト</u>" as t4 {
+状態
+}
+object "<u>車情報: 車</u>" as car {
+管理番号=5
+車種
+貸出料金
+タイヤサイズ
+}
+
+t1 -- car
+t2 -- car
+t3 -- car
+t4 -- car
+@enduml
