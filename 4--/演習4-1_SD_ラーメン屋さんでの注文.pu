@@ -13,8 +13,8 @@ activate custmer
         clerk -> cook: 調理を指示する
         activate cook
             cook -> cook: 調理する
+            clerk <- cook: ラーメン
         deactivate cook
-        clerk <- cook: ラーメン
     custmer <-- clerk: ラーメン
     deactivate clerk
 deactivate custmer
