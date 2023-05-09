@@ -1,0 +1,15 @@
+@startuml
+class タイヤ {
+- サイズ:int
+- メーカー:String
+
+}
+class 車 {
+- 車種:String
+- カラー:String
++ 動く
+}
+車 "1" --> "4" タイヤ:取り付ける >
+
+
+@enduml
