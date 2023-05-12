@@ -1,0 +1,5 @@
+@startuml
+controller -> hotel: ()ホテル予約
+hotel -> hotel: 予約作成()
+hotel -> hotel: 予約登録()
+@enduml
