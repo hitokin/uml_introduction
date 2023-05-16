@@ -5,6 +5,7 @@ Actor "：会員" as user
 participant ":検索情報" as boundary
 participant ":検索コントローラ" as control
 participant ":検索情報表示" as entity
+participant ":カテゴリ表示" as entity2
 
 activate user
   user ->> boundary 
@@ -12,6 +13,13 @@ activate user
         boundary ->> control
             activate control
                 control --> entity: <<create>>生成()
+                opt 商品カテゴリ数
+                    control --> entity: <<create>>生成()
+                    activate entity
+                    control -> entity2
+                    deactivate entity
+                    
+                end alt
                 control --> boundary
             deactivate control
             boundary -> boundary
