@@ -1,0 +1,29 @@
+@startuml 図4-6
+ hide footbox
+skinparam style strictuml /' 厳密なUMLに準拠する'/
+Actor "：会員" as user
+participant ブラウザ as browser <<entity>>
+participant Webサーバー as Wserver <<boundary>>
+participant 画像サーバー as Gserver <<boundary>>
+
+activate user
+    user ->> browser
+    activate browser
+        opt 画像リンククリック
+        browser ->> Wserver
+        activate Wserver
+        end alt
+            Wserver ->> Gserver
+            activate Gserver
+                Gserver --> Wserver
+            deactivate Gserver
+            Wserver --> browser
+        deactivate Wserver
+    deactivate browser
+deactivate user
+
+
+
+
+@enduml
+
