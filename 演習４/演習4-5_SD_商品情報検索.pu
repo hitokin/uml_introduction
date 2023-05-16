@@ -1,0 +1,26 @@
+@startuml 図4-5
+ hide footbox
+skinparam style strictuml /' 厳密なUMLに準拠する'/
+Actor "：会員" as user
+participant ":検索情報" as boundary
+participant ":検索コントローラ" as control
+participant ":検索情報表示" as entity
+
+activate user
+  user ->> boundary 
+    activate boundary
+        boundary ->> control
+            activate control
+                control --> entity: <<create>>生成()
+                control --> boundary
+            deactivate control
+            boundary -> boundary
+            activate boundary
+    deactivate boundary
+deactivate user
+
+' note right of seach : 非同期メッセージ
+
+
+@enduml
+
