@@ -1,0 +1,10 @@
+@startuml
+object "基本情報技術者試験：資格" as sikaku1 {
+    取得人数=2
+
+}
+object "linuC試験Level1:資格" as sikaku2 {
+    取得人数=1
+}
+
+@enduml

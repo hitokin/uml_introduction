@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+
+state 空室状態 {
+    state <<>>
+}
+state 予約済み状態 {
+
+}
+state 使用状態 {
+
+}
+@enduml
