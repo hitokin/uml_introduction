@@ -1,13 +1,16 @@
 @startuml
 left to right direction
 
+[*] --> 空室状態 :予約待ち状態
+空室状態 --> 予約済み状態 :予約完了
+予約済み状態 --> 使用状態 : 使用待機中
 state 空室状態 {
-    state <<>>
+    [*] --> 掃除中
 }
 state 予約済み状態 {
 
 }
 state 使用状態 {
-
+ 
 }
 @enduml
