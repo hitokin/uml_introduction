@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+autonumber
+skinparam style strictuml
+
+    actor 客
+    participant 自動販売機
+    activate 客
+        客->>自動販売機: 飲み物を選択
+        activate 自動販売機
+            自動販売機->>自動販売機: 支払い処理
+            自動販売機-->>客: 支払い結果を表示
+            自動販売機-->>客: 飲み物の提供
+        deactivate 自動販売機
+    deactivate 客
+
+@enduml

@@ -1,0 +1,7 @@
+@startuml 自動販売機
+left to right direction
+[*] --> 待機中 : お金を入れる   
+待機中--> 印刷中 : 待機完了
+印刷中 -right> [*] : 用紙なし
+印刷中--> [*]: 印刷完了
+@enduml

@@ -1,0 +1,20 @@
+@startuml 自動販売機
+left to right direction
+
+actor ユーザー
+actor ベンダー
+
+rectangle 自動販売機  {
+    usecase 商品選択
+    usecase 金銭投入
+    usecase 支払い処理
+    usecase お釣り返却
+    usecase 在庫管理
+
+    ユーザー --> 商品選択
+    ユーザー --> 金銭投入
+    ユーザー --> 支払い処理
+    ユーザー --> お釣り返却
+    在庫管理 <-- ベンダー
+}
+@enduml
