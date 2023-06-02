@@ -1,0 +1,14 @@
+@startuml 自動販売機
+left to right direction
+
+actor ユーザー
+    package ライントレーサー {
+    actor 電源SW    
+    usecase 電源ON
+    usecase 電源OFF
+    ユーザー --> 電源ON
+    ユーザー --> 電源OFF
+    電源ON --> 電源SW :部品に電力を送る
+    電源OFF --> 電源SW :部品の電力を止める
+    }
+@enduml
