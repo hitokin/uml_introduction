@@ -1,0 +1,22 @@
+@startuml
+title 製品製造
+|販売代理店|
+start
+:発注;
+|営業部門|
+:受注;
+:在庫確認;
+if () is (<color:red>[在庫あり]) then
+:;
+else (<color:blue>[在庫なし])
+|製造部門|
+:製造;
+endif
+|営業部門|
+:発送;
+|販売代理店|
+:検収/支払い;
+|営業部門|
+:入金確認;
+stop
+@enduml

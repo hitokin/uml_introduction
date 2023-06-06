@@ -1,0 +1,10 @@
+@startuml カレーライス
+title カレーライスの作り方
+start
+:ユーザはユーザ名を入力する;
+:ユーザはパスワードを入力する;
+if () is (<color:red>[認証成功]) then
+#Pink:予約を行う;
+else (<color:blue>[認証失敗])
+#skyblue:再入力をする;
+@enduml
