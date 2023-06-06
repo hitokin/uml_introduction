@@ -1,5 +1,5 @@
 @startuml
-title 製品製造
+title レストラン
 |顧客|
 start
 :案内を依頼する;

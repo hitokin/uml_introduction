@@ -1,0 +1,25 @@
+@startuml
+title 製品製造
+|客|
+start
+:弁当をレジにもっていく;
+|店員|
+fork
+    |客|
+    :お金を支払う;
+    |店員|
+    |店員|
+    :清算する;
+fork again
+    if (あたためますか) then (yes)
+        :弁当を温める;
+    else (no)
+    endif
+    :弁当を袋に入れる;
+    
+end fork
+|客|
+:弁当を手に持つ;
+
+stop
+@enduml

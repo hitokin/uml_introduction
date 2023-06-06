@@ -1,5 +1,5 @@
-@startuml カレーライス
-title カレーライスの作り方
+@startuml ホテル
+title ホテル
 start
 :ユーザはユーザ名を入力する;
 :ユーザはパスワードを入力する;
