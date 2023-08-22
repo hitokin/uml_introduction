@@ -1,21 +1,57 @@
 @startuml ユースケース図
+' left to right direction
+' rectangle 診察予約システム {
+'     actor 利用者
+'     actor 管理者
+
+'     usecase 予約と確認
+'     usecase 登録取り消し
+'     usecase 順番確認
+'     usecase 順番更新
+
+
+'     利用者 --> 予約と確認
+'     利用者 --> 順番確認
+'     利用者 --> 登録取り消し
+'     利用者 --> 順番更新
+
+'     順番更新 <-- 管理者  
+' }
+
 left to right direction
-rectangle 診察予約システム {
+rectangle しりとりアプリ {
     actor 利用者
     actor 管理者
 
-    usecase 予約と確認
-    usecase 登録取り消し
-    usecase 順番確認
-    usecase 順番更新
+    usecase 新規登録
+    usecase ログイン
 
-
-    利用者 --> 予約と確認
-    利用者 --> 順番確認
-    利用者 --> 登録取り消し
-    利用者 --> 順番更新
-
-    順番更新 <-- 管理者  
+    ログイン .> 新規登録 : include
+    利用者 --> ログイン
+    package 利用者機能{
+    usecase ワード投稿
+    usecase アカウント名変更
+    usecase パスワード変更
+    usecase アカウント削除
+    usecase カテゴリ選択
+    usecase 過去ログ閲覧
+    usecase 単語検索
+    usecase 自分の投稿閲覧
+    usecase 投稿削除
+    usecase 日付検索
+        利用者 --> 日付検索
+        利用者 --> ワード投稿
+        利用者 --> アカウント名変更
+        利用者 --> パスワード変更
+        利用者 --> アカウント削除
+        利用者 --> カテゴリ選択
+        利用者 --> 過去ログ閲覧
+        利用者 --> 単語検索
+        利用者 --> 自分の投稿閲覧
+        利用者 --> 投稿削除
+    }
+        管理者--> 投稿削除
+  
 }
 
 @enduml
