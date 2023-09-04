@@ -1,10 +1,10 @@
 @startuml ユースケース図
 left to right direction
 
-rectangle サークル活動サイト {
     actor 利用者学生
     actor 先生
     actor サークルリーダー
+rectangle サークル活動サイト {
 
     usecase サークル立ち上げ申請
     usecase サークル立ち上げ
@@ -19,9 +19,14 @@ rectangle サークル活動サイト {
     サークルリーダー --> 活動記録
     サークルリーダー --> サークル管理
     先生 --> サークル立ち上げ
+    先生 --> サークル管理
         サークル参加申請 <. サークル参加 : <<include>>
         サークル立ち上げ申請 --> 先生
 
+    package サークル管理{
+        usecase サークル削除
+        usecase サークル編集
+    }
     }
 rectangle スラック {
     actor 利用者学生
@@ -31,10 +36,6 @@ rectangle スラック {
     利用者学生 <--> チャット
     新サークル設立通知 --> 利用者学生
 } 
-package サークル管理{
-    usecase サークル削除
-    usecase サークル編集
-}
 サークル参加申請 --> サークルリーダー
 
 @endumll
